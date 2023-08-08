@@ -13,3 +13,7 @@ use App\Http\Controllers\AuthController;
 //Login Route
 
 Route::post('/login',[AuthController::class,'Login']);
+
+//Register Route
+
+Route::post('/register',[AuthController::class,'Register']);
