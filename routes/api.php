@@ -3,17 +3,27 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-
+use App\Http\Controllers\ForgetController;
+use App\Http\Controllers\ResetController;
+use App\Http\Controllers\UserController;
 
 
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
+ 
 
-//Login Route
+ // Login Routes 
+Route::post('/login',[AuthController::class, 'Login']);
 
-Route::post('/login',[AuthController::class,'Login']);
+ // Register Routes 
+Route::post('/register',[AuthController::class, 'Register']);
 
-//Register Route
+ // Forget Password Routes 
+Route::post('/forgetpassword',[ForgetController::class, 'ForgetPassword']);
 
-Route::post('/register',[AuthController::class,'Register']);
+ // Reset Password Routes 
+Route::post('/resetpassword',[ResetController::class, 'ResetPassword']);
+
+ // Current User Route 
+Route::get('/user',[UserController::class, 'User'])->middleware('auth:api');
