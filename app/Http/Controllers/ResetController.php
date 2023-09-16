@@ -10,7 +10,7 @@ use App\Http\Requests\ResetRequest;
 use DB;
 use Illuminate\Support\Facades\Hash;
 
-class ResetController extends Controller
+class ResetController extends Controller   
 {
     public function ResetPassword(ResetRequest $request){
 
